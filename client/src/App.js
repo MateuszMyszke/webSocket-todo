@@ -33,9 +33,11 @@ const App = () => {
     setTasks(taskData);
   };
 
-  const removeTask = (taskId) => {
+  const removeTask = (taskId, isLocal) => {
     setTasks((tasks) => tasks.filter((task) => task.id !== taskId));
-    socket.emit('removeTask', taskId);
+    if (isLocal) {
+      socket.emit('removeTask', taskId);
+    }
   };
 
   const submitForm = (e) => {
