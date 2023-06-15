@@ -1,13 +1,13 @@
 const express = require('express');
 const socket = require('socket.io');
 const path = require('path');
-const cors = require('cors');
+
 
 const app = express();
 
 const tasks = [];
 
-app.use(cors());
+
 
 const server = app.listen(8000, () => {
   console.log('Server is running...');
